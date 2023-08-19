@@ -3,6 +3,30 @@
 <img [src] = "image_path"/>
 <input (input)="passValueToComponent($event)"/>
 <input [(ngModel)]="defaultVal"/>{{defaultVal}}
+<input (input) = "checkButton($event)"/> 
+<button [disabled]="submitState">Submit</button>
+<ng-container
+  *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+</ng-container>
+
+<ng-template #loggedIn>
+  <div>
+    Welcome back, friend.
+  </div>
+</ng-template>
+<ng-template #loggedOut>
+  <div>
+    Please friend, login.
+  </div>
+</ng-template>
+
+
+<ng-container *ngFor = "let course of courses">
+  {{course.name}}
+
+</ng-container>
+
+
   <app-header></app-header>
   <app-sidebar></app-sidebar>
 
