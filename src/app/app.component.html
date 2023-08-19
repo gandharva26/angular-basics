@@ -1,0 +1,12 @@
+<div>
+{{name}}
+<img [src] = "image_path"/>
+<input (input)="passValueToComponent($event)"/>
+<input [(ngModel)]="defaultVal"/>{{defaultVal}}
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+
+  <app-main></app-main>
+
+  <app-footer> </app-footer>
+</div>
